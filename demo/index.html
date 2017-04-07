@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Javascript Serialization Demo</title>
+  <meta name='author' content='Brian Edmonds'>
+  <meta name='description'
+        content='A simple demo of javascript form serialization'>
+  <link href='demo.css' rel='stylesheet' media='screen'>
+
+  <script src='sanity.js'></script>
+  <script src='serialize.js'></script>
+</head>
+<body>
+  <main>
+  <article>
+    <header>
+      <h1>JavaScript<br>Form Serialization</h1>
+    </header>
+    <section>
+      <p>
+        <a href="https://github.com/bedmonds/serialize-js/">Source on GitHub</a>
+      </p>
+
+      <form id='my_form'>
+        <fieldset>
+          <legend>Select</legend>
+
+          <ul class='two-column inputs'>
+            <li>
+              <label for='hello-target'>
+                Dropdowns <em>(Say hello to someone!)</em>
+              </label>
+              <select id='hello-target' name='dropdown-hello'>
+                <option>You</option>
+                <option>World</option>
+                <option>Everybody</option>
+              </select>
+            </li>
+
+            <li>
+              <label for='ignore-list'>
+                Select Multiple <em>(...but not these people)</em>
+              </label>
+              <select multiple id='ignore-list' name='ignore-these-guys[]'>
+                <option>Brian Edmonds</option>
+                <option>A Random Internet Troll</option>
+                <option>Mark Zuckerberg</option>
+                <option selected>Kanye</option>
+                <option selected>/r/programming and Medium</option>
+              </select>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Inputs</legend>
+
+          <ul class='two-column inputs'>
+            <li>
+              <label for='text'>Textbox</label>
+              <input type='text' id='text' name='mytextbox'>
+            </li>
+            <li>
+              <label for='phone'>Phone Number</label>
+              <input type='phone' id='phone' name='myphonenumber'>
+            </li>
+            <li>
+              <label for='email'>E-mail Address</label>
+              <input type='email' id='email' name='myemailaddress'>
+            </li>
+            <li>
+              <label for='search'>Search</label>
+              <input type='search' id='search' name='myquery'>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Radio Buttons</legend>
+
+          <label><input type='radio' name='colour' value='Blue'> Blue</label>
+          <label><input type='radio' name='colour' value='Red'> Red</label>
+          <label><input type='radio' name='colour' value='Green'> Green</label>
+          <label><input type='radio' name='colour' value='Brown'> Brown</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Checkboxes</legend>
+
+          <ul class='two-column'>
+            <li>
+              <label>
+                <input type='checkbox' name='extras[nospamplz]' value=1>
+                Don't spam me please!
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type='checkbox' name='extras[free-stuff]' value=1>
+                Do send me free stuff. 
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <button id='marketoid-button' name='value-button' 
+          value='With added value!'>
+          Marketoid Submit <em>(With added value!)</em>
+        </button>
+        <input type='submit' value='Boring Submit'>
+      </form>
+
+      <p>
+        <a id='outsider'>Serialize it from any event</a>
+      </p>
+
+      <ul id='results'></ul>
+    </section>
+
+    <section class='showboat' id='license'>
+      <h2>License<br>It's MIT licensed</h2>
+
+      <p>Copyright (c) 2017 Brian Edmonds &lt;brian@bedmonds.net&gt;</p> 
+      <p>
+        Permission is hereby granted, free of charge, to any person 
+        obtaining a copy of this software and associated documentation 
+        files (the "Software"), to deal in the Software without 
+        restriction, including without limitation the rights to use, 
+        copy, modify, merge, publish, distribute, sublicense, and/or
+        sell copies of the Software, and to permit persons to whom 
+        the Software is furnished to do so, subject to the following 
+        conditions:
+      </p>
+
+      <p>
+        The above copyright notice and this permission notice shall 
+        be included in all copies or substantial portions of the 
+        Software.
+      </p>
+
+      <p>
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+        OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+        NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR 
+        ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+        CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+        CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+        THE SOFTWARE.
+      </p>
+    </section>
+  </article>
+  </main>
+    <script>
+function logSerialize(str) {
+  var log = $id('results');
+  log.insertBefore($mkele('li', $mktxt(str)), log.firstChild);
+}
+
+$e($id('my_form'), 'submit', function(ev) {
+  ev.preventDefault();
+  logSerialize('[form-submit]: ' + $serialize($id('my_form'), ev));
+});
+
+$e($id('marketoid-button'), 'click', function(ev) {
+  ev.preventDefault();
+  logSerialize('[form-submit]: ' + $serialize($id('my_form'), ev));
+});
+
+$e($id('outsider'), 'click', function() {
+  logSerialize('[outsider]: ' + $serialize($id('my_form')));
+});
+  </script>
+</body>
+</html>

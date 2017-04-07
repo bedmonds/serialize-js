@@ -1,0 +1,252 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px;
+  font-feature-settings: "calt", "kern", "liga", "onum";
+  font-kerning: normal; }
+  @media screen and (max-width: 800px) {
+    html {
+      font-size: 14px; } }
+  @media screen and (min-width: 1516px) {
+    html {
+      font-size: 24px; } }
+
+body {
+  font-family: "Lucida Grande", "Trebuchet MS", "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  color: #f0f0f0;
+  background: #282828;
+  line-height: 1.3333; }
+
+hr {
+  width: calc(100% - 8rem);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background: #fefafe;
+  border: none;
+  height: 4px; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  color: #336699; }
+
+sup {
+  vertical-align: super;
+  font-size: 70%; }
+
+a {
+  text-decoration: none;
+  color: #f0f0f0;
+  background-image: linear-gradient(to bottom, transparent 75%, currentColor 75%);
+  background-position: 0 calc(100% - 0.05em);
+  background-repeat: repeat-x;
+  background-size: 4px 6px;
+  text-shadow: -1px 0 #282828, 0px 0 #282828, -0.5px 0.5px 0 #282828, 0.5px 0.5px 0 #282828;
+  transition: all 300ms ease; }
+  a:hover, a:focus {
+    color: #79b2eb; }
+
+time {
+  font-family: Georgia, Baskerville, Garamond, serif;
+  font-style: italic; }
+
+p {
+  max-width: 50ex;
+  max-width: 72ch;
+  margin: 2rem auto; }
+  p:first-child {
+    margin-top: 0; }
+  p:last-of-type {
+    margin-bottom: 0; }
+
+h1, h2, h3, h4, h5 {
+  max-width: 40rem;
+  line-height: 0.8;
+  color: #4C99E5;
+  margin: 1.5rem auto;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Georgia, Baskerville, Garamond, serif;
+  text-align: center; }
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
+    margin-top: 0; }
+  h1::first-line, h2::first-line, h3::first-line, h4::first-line, h5::first-line {
+    color: #fff;
+    font-size: 2em;
+    line-height: 1.12; }
+
+h1 {
+  font-size: 180%; }
+
+h2 {
+  font-size: 160%; }
+
+h3 {
+  font-size: 140%; }
+
+h4 {
+  font-size: 120%; }
+
+body > header {
+  position: relative;
+  padding: 1rem 4rem;
+  background: #282828; }
+  body > header > * {
+    vertical-align: bottom; }
+  body > header > nav {
+    position: absolute;
+    bottom: -0.25rem;
+    right: 4rem;
+    font-size: 0.75rem; }
+    body > header > nav ul {
+      display: block;
+      list-style: none; }
+    body > header > nav li {
+      display: inline-block;
+      padding-top: 0.5rem;
+      padding-bottom: 1.25rem; }
+      body > header > nav li:last-of-type > a {
+        padding-right: 0; }
+    body > header > nav a {
+      color: #fefafe;
+      text-align: center;
+      position: relative;
+      display: block;
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      padding: 0 0.8rem;
+      transition: opacity 300ms ease-in-out;
+      background: none;
+      text-shadow: none; }
+      body > header > nav a.active, body > header > nav a:focus, body > header > nav a:hover {
+        color: #fefafe;
+        opacity: 1;
+        transition: opacity 300ms ease-in-out; }
+
+body > footer {
+  display: block;
+  font-size: 0;
+  padding: 2rem 4rem;
+  background: #fefafe;
+  color: #282828; }
+  body > footer > * {
+    display: inline-block;
+    font-size: 1rem;
+    width: calc(100% / 3);
+    max-width: calc(100% / 3); }
+  body > footer > * {
+    vertical-align: top;
+    font-size: 0.7rem;
+    line-height: 1.5; }
+  body > footer .title {
+    font-size: 140%;
+    font-weight: bold;
+    line-height: 0.8;
+    font-family: Georgia, Baskerville, Garamond, serif;
+    margin-bottom: 1rem; }
+  body > footer a {
+    color: #282828;
+    text-shadow: -1px 0 #fefafe, 0px 0 #fefafe, -0.5px 0.5px 0 #fefafe, 0.5px 0.5px 0 #fefafe; }
+
+.numeric {
+  font-family: "Lucida Grande", "Trebuchet MS", "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif; }
+
+.two-column {
+  display: block;
+  font-size: 0; }
+  .two-column > * {
+    display: inline-block;
+    font-size: 1rem;
+    width: calc(100% / 2);
+    max-width: calc(100% / 2); }
+  .two-column > * {
+    vertical-align: top; }
+  .two-column.sidebar > *:first-child {
+    max-width: calc((100% / 3) * 2);
+    width: calc((100% / 3) * 2); }
+  .two-column.sidebar > *:last-child {
+    max-width: calc(100% / 3);
+    width: calc(100% / 3); }
+
+/* Demo patches */
+section { padding: 4rem 2rem; }
+section > * {
+max-width: 65ch;
+margin-left: auto;
+margin-right: auto; 
+position: relative; }
+
+form em { color: #4C99E5; }
+fieldset {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #fff;
+}
+fieldset:last-of-type { border-bottom: none; }
+legend { line-height: 1.8; font-size: 140%; }
+
+section:first-of-type { padding-top: 0; }
+#license { background: #1E3B59; }
+#outsider {
+  cursor: pointer; }
+#results > li {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: #fcf0fc;
+  color: #323232;
+}
+#results > li:last-of-type { margin-bottom: 0; }
+
+.inputs label { display: block; }
+.inputs li { margin: 0.5rem auto; }
+.inputs { margin-top: -0.5rem; }
+main { padding-top: 4rem; }
