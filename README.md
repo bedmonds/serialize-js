@@ -7,7 +7,7 @@ Serialize a form in JavaScript without external dependencies.
 ## Demo
 
 Either open up `demo/index.html` locally or view an online demo
-at <http://dump.bedmonds.net/serialize-js/>
+at <http://demo.bedmonds.net/serialize-js/>
 
 
 ## How does it work?
