@@ -4,6 +4,12 @@ serialize.js
 Serialize a form in JavaScript without external dependencies.
 
 
+## Notes
+
+I have moved all of my work over to GitLab; you can find this project's new home
+at https://gitlab.com/bedmonds/serialize-js
+
+
 ## Demo
 
 Either open up `demo/index.html` locally or view an online demo
